@@ -1,0 +1,14 @@
+:root {
+    --maintxt: #FBF9F6;
+}
+label {
+    color: var(--maintxt);
+    font-size: 27px;
+}
+input {
+    width: 45vw;
+}
+button {
+    width: 15vw;
+    height: 3vw;
+}

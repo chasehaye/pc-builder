@@ -3,10 +3,11 @@ import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import NewPcPage from '../NewPcPage/NewPcPage';
+import PcIndexPage from '../PcIndexPage/PcIndexPage';
+import HomePage from '../HomePage/HomePage';
 import NavBar from '../../components/NavBar/NavBar';
-import SignUpForm from '../../components/SignUpForm/SignUpForm';
+import PcDetailPage from '../PcDetailPage/PcDetailPage';
 
 
 export default function App() {
@@ -17,10 +18,12 @@ export default function App() {
     <main className="App">
     { user ?
       <>
-      <NavBar setUser ={setUser} user = {user}/>
+      <NavBar setUser ={setUser} user = {user}></NavBar>
       <Routes>
-        <Route path="/orders/new" element={<NewOrderPage />} />
-        <Route path="/orders" element={<OrderHistoryPage />} />
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/pcs/new" element={<NewPcPage />} />
+        <Route path="/pcs" element={<PcIndexPage />} />
+        <Route path="/pcs/:pcId" element={<PcDetailPage />} />
       </Routes>
       </>
       :
